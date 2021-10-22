@@ -43,7 +43,7 @@ class PatientAdapter : RecyclerView.Adapter<PatientAdapter.RecyclerViewHolder>()
 
             bt_viewMore.setOnClickListener {
                 val action =
-                    PatientListFragmentDirections.actionFirstFragmentToUpdateFragment(currentPatient)
+                    PatientListFragmentDirections.actionPatientListFragmentToViewFragment(currentPatient)
                 findNavController().navigate(action)
             }
         }

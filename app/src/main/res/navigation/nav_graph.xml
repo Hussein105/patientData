@@ -14,13 +14,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/AddFragment"
-            app:popUpTo="@id/PatientListFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
         <action
-            android:id="@+id/action_FirstFragment_to_updateFragment"
-            app:destination="@id/UpdateFragment"
-            app:popUpTo="@id/PatientListFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_PatientListFragment_to_viewFragment"
+            app:destination="@id/viewFragment" />
     </fragment>
     <fragment
         android:id="@+id/AddFragment"
@@ -30,18 +27,34 @@
 
         <action
             android:id="@+id/action_AddFragment_to_PatientListFragment"
-            app:destination="@id/PatientListFragment" />
+            app:destination="@id/PatientListFragment"
+            app:popUpTo="@id/PatientListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/UpdateFragment"
         android:name="com.ho.patients.fragments.UpdateFragment"
         android:label="@string/third_fragment_label"
-        tools:layout="@layout/fragment_update" >
+        tools:layout="@layout/fragment_update">
         <action
-            android:id="@+id/action_updateFragment_to_FirstFragment"
-            app:destination="@id/PatientListFragment" />
+            android:id="@+id/action_UpdateFragment_to_PatientListFragment"
+            app:destination="@id/PatientListFragment"
+            app:popUpTo="@id/PatientListFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="currentPatient"
+            app:argType="com.ho.patients.database.PatientEntity" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="com.ho.patients.fragments.ViewFragment"
+        android:label="fragment_view"
+        tools:layout="@layout/fragment_view" >
+        <action
+            android:id="@+id/action_viewFragment_to_UpdateFragment"
+            app:destination="@id/UpdateFragment" />
+        <argument
+            android:name="viewCurrentPatient"
             app:argType="com.ho.patients.database.PatientEntity" />
     </fragment>
 </navigation>

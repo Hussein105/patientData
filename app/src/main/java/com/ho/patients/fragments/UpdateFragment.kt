@@ -69,7 +69,7 @@ class UpdateFragment : Fragment() {
                 "Successfully Removed ${args.currentPatient.name} !",
                 Toast.LENGTH_SHORT
             ).show()
-            findNavController().navigate(R.id.action_updateFragment_to_FirstFragment)
+            findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
         }
         builder.setNegativeButton("No") { _, _ ->
             Toast.makeText(
@@ -117,7 +117,7 @@ class UpdateFragment : Fragment() {
             mPatientViewModel.updatePatientData(updatedPatientData)
 
             Toast.makeText(requireContext(), "Updated successfully", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_updateFragment_to_FirstFragment)
+            findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
         } else {
             Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
         }
