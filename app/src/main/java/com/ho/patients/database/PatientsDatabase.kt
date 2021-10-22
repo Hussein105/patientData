@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [PatientEntity::class], version = 2, exportSchema = false)
+@Database(entities = [PatientEntity::class], version = 11, exportSchema = true)
 abstract class PatientsDatabase : RoomDatabase() {
 
     abstract fun patientDao(): PatientsDao
@@ -16,18 +16,63 @@ abstract class PatientsDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: PatientsDatabase? = null
 
-        val migration1_2: Migration = object : Migration(1, 2) {
+        private val migration1_2: Migration = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL("ALTER TABLE patients ADD COLUMN gender TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN address TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN habits TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN presentHistory TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN pastHistory TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN complain TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN bp TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN temperature TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN spo2 TEXT DEFAULT ''")
-                database.execSQL("ALTER TABLE patients ADD COLUMN treatment TEXT DEFAULT ''")
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'gender' TEXT")
+            }
+        }
+
+        private val migration2_3: Migration = object : Migration(2, 3) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'address' TEXT")
+            }
+        }
+
+        private val migration3_4: Migration = object : Migration(3, 4) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'habits' TEXT")
+            }
+        }
+
+        private val migration4_5: Migration = object : Migration(4, 5) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'presentHistory' TEXT")
+            }
+        }
+
+        private val migration5_6: Migration = object : Migration(5, 6) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'pastHistory' TEXT")
+            }
+        }
+
+        private val migration6_7: Migration = object : Migration(6, 7) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'complain' TEXT")
+            }
+        }
+
+        private val migration7_8: Migration = object : Migration(7, 8) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'bloodPressure' TEXT")
+            }
+        }
+
+        private val migration8_9: Migration = object : Migration(8, 9) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'temperature' TEXT")
+            }
+        }
+
+        private val migration9_10: Migration = object : Migration(9, 10) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'oxygenSaturation' TEXT")
+            }
+        }
+
+        private val migration10_11: Migration = object : Migration(10, 11) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'treatment' TEXT")
             }
         }
 
@@ -41,7 +86,18 @@ abstract class PatientsDatabase : RoomDatabase() {
                     context.applicationContext,
                     PatientsDatabase::class.java,
                     "patient_database"
-                ).addMigrations(migration1_2).build()
+                ).addMigrations(
+                    migration1_2,
+                    migration2_3,
+                    migration3_4,
+                    migration4_5,
+                    migration5_6,
+                    migration6_7,
+                    migration7_8,
+                    migration8_9,
+                    migration9_10,
+                    migration10_11
+                ).build()
                 INSTANCE = instance
                 return instance
             }

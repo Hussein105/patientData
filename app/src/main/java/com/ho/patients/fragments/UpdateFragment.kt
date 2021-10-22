@@ -38,6 +38,17 @@ class UpdateFragment : Fragment() {
         binding.apply {
             etUpdatePatientName.setText(args.currentPatient.name)
             etUpdatePatientDiagnosis.setText(args.currentPatient.diagnosis)
+            etUpdateBloodPressure.setText(args.currentPatient.bloodPressure)
+            etUpdateChiefComplain.setText(args.currentPatient.complain)
+            etUpdateOxygenSaturation.setText(args.currentPatient.oxygenSaturation)
+            etUpdatePastHistory.setText(args.currentPatient.pastHistory)
+            etUpdatePatientAddress.setText(args.currentPatient.address)
+            etUpdatePatientGender.setText(args.currentPatient.gender)
+            etUpdatePatientHabits.setText(args.currentPatient.habits)
+            etUpdatePresentHistory.setText(args.currentPatient.presentHistory)
+            etUpdateTemp.setText(args.currentPatient.temperature)
+            etUpdateTreatment.setText(args.currentPatient.treatment)
+
 
             btUpdatePatient.setOnClickListener {
                 updatePatientData()
@@ -73,12 +84,36 @@ class UpdateFragment : Fragment() {
     }
 
     private fun updatePatientData() {
-        val patientName = binding.etUpdatePatientName.text.toString()
-        val patientDiagnosis = binding.etUpdatePatientDiagnosis.text.toString()
+        val upPatientName = binding.etUpdatePatientName.text.toString()
+        val upPatientDiagnosis = binding.etUpdatePatientDiagnosis.text.toString()
+        val upPatientGender = binding.etUpdatePatientGender.text.toString().trim()
+        val upPatientAddress = binding.etUpdatePatientAddress.text.toString().trim()
+        val upPatientHabits = binding.etUpdatePatientHabits.text.toString().trim()
+        val upPresentHistory = binding.etUpdatePresentHistory.text.toString().trim()
+        val upPastHistory = binding.etUpdatePastHistory.text.toString().trim()
+        val upComplain = binding.etUpdateChiefComplain.text.toString().trim()
+        val upBloodPressure = binding.etUpdateBloodPressure.text.toString().trim()
+        val upTemperature = binding.etUpdateTemp.text.toString().trim()
+        val upSpo2 = binding.etUpdateOxygenSaturation.text.toString().trim()
+        val upTreatment = binding.etUpdateTreatment.text.toString().trim()
 
-        if (inputCheck(patientName, patientDiagnosis)) {
+        if (inputCheck(upPatientName, upPatientDiagnosis)) {
             val updatedPatientData =
-                PatientEntity(args.currentPatient.id, patientName, patientDiagnosis)
+                PatientEntity(
+                    args.currentPatient.id,
+                    upPatientName,
+                    upPatientDiagnosis,
+                    upPatientGender,
+                    upPatientAddress,
+                    upPatientHabits,
+                    upPresentHistory,
+                    upPastHistory,
+                    upComplain,
+                    upBloodPressure,
+                    upTemperature,
+                    upSpo2,
+                    upTreatment
+                )
             mPatientViewModel.updatePatientData(updatedPatientData)
 
             Toast.makeText(requireContext(), "Updated successfully", Toast.LENGTH_SHORT).show()

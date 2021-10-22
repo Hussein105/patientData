@@ -44,9 +44,33 @@ class AddFragment : Fragment() {
     private fun insertNewPatientData() {
         val patientName = binding.etPatientName.text.toString().trim()
         val patientDiagnosis = binding.etPatientDiagnosis.text.toString().trim()
+        val patientGender = binding.etPatientGender.text.toString().trim()
+        val patientAddress = binding.etPatientAddress.text.toString().trim()
+        val patientHabits = binding.etPatientHabits.text.toString().trim()
+        val presentHistory = binding.etPresentHistory.text.toString().trim()
+        val pastHistory = binding.etPastHistory.text.toString().trim()
+        val complain = binding.etChiefComplain.text.toString().trim()
+        val bloodPressure = binding.etBloodPressure.text.toString().trim()
+        val temperature = binding.etTemp.text.toString().trim()
+        val oxygenSaturation = binding.etOxygenSaturation.text.toString().trim()
+        val treatment = binding.etTreatment.text.toString().trim()
 
         if (inputCheck(patientName, patientDiagnosis)) {
-            val patientData = PatientEntity(0, patientName, patientDiagnosis)
+            val patientData = PatientEntity(
+                0,
+                patientName,
+                patientDiagnosis,
+                patientGender,
+                patientAddress,
+                patientHabits,
+                presentHistory,
+                pastHistory,
+                complain,
+                bloodPressure,
+                temperature,
+                oxygenSaturation,
+                treatment
+            )
             mPatientViewModel.addPatientData(patientData)
             Toast.makeText(requireContext(), "Saved!", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_AddFragment_to_PatientListFragment)
