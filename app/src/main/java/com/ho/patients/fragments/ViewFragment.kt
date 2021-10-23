@@ -46,7 +46,7 @@ class ViewFragment : Fragment() {
             tvViewTreatment.text = args.viewCurrentPatient.treatment
 
             btViewEditPatient.setOnClickListener {
-                findNavController().navigate(R.id.action_viewFragment_to_UpdateFragment)
+                findNavController().navigate(R.id.action_viewFragment_to_UpdateFragment, requireArguments())
             }
         }
     }

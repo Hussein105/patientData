@@ -41,15 +41,18 @@
             app:destination="@id/PatientListFragment"
             app:popUpTo="@id/PatientListFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_UpdateFragment_to_viewFragment"
+            app:destination="@id/viewFragment" />
         <argument
-            android:name="currentPatient"
+            android:name="updateCurrentPatient"
             app:argType="com.ho.patients.database.PatientEntity" />
     </fragment>
     <fragment
         android:id="@+id/viewFragment"
         android:name="com.ho.patients.fragments.ViewFragment"
-        android:label="fragment_view"
-        tools:layout="@layout/fragment_view" >
+        android:label="OverView"
+        tools:layout="@layout/fragment_view">
         <action
             android:id="@+id/action_viewFragment_to_UpdateFragment"
             app:destination="@id/UpdateFragment" />

@@ -20,7 +20,7 @@ class UpdateFragment : Fragment() {
     private var _binding: FragmentUpdateBinding? = null
     private val binding get() = _binding!!
 
-    private val args by navArgs<UpdateFragmentArgs>()
+    private val args by navArgs<ViewFragmentArgs>()
     private lateinit var mPatientViewModel: PatientViewModel
 
     override fun onCreateView(
@@ -36,18 +36,18 @@ class UpdateFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            etUpdatePatientName.setText(args.currentPatient.name)
-            etUpdatePatientDiagnosis.setText(args.currentPatient.diagnosis)
-            etUpdateBloodPressure.setText(args.currentPatient.bloodPressure)
-            etUpdateChiefComplain.setText(args.currentPatient.complain)
-            etUpdateOxygenSaturation.setText(args.currentPatient.oxygenSaturation)
-            etUpdatePastHistory.setText(args.currentPatient.pastHistory)
-            etUpdatePatientAddress.setText(args.currentPatient.address)
-            etUpdatePatientGender.setText(args.currentPatient.gender)
-            etUpdatePatientHabits.setText(args.currentPatient.habits)
-            etUpdatePresentHistory.setText(args.currentPatient.presentHistory)
-            etUpdateTemp.setText(args.currentPatient.temperature)
-            etUpdateTreatment.setText(args.currentPatient.treatment)
+            etUpdatePatientName.setText(args.viewCurrentPatient.name)
+            etUpdatePatientDiagnosis.setText(args.viewCurrentPatient.diagnosis)
+            etUpdateBloodPressure.setText(args.viewCurrentPatient.bloodPressure)
+            etUpdateChiefComplain.setText(args.viewCurrentPatient.complain)
+            etUpdateOxygenSaturation.setText(args.viewCurrentPatient.oxygenSaturation)
+            etUpdatePastHistory.setText(args.viewCurrentPatient.pastHistory)
+            etUpdatePatientAddress.setText(args.viewCurrentPatient.address)
+            etUpdatePatientGender.setText(args.viewCurrentPatient.gender)
+            etUpdatePatientHabits.setText(args.viewCurrentPatient.habits)
+            etUpdatePresentHistory.setText(args.viewCurrentPatient.presentHistory)
+            etUpdateTemp.setText(args.viewCurrentPatient.temperature)
+            etUpdateTreatment.setText(args.viewCurrentPatient.treatment)
 
 
             btUpdatePatient.setOnClickListener {
@@ -63,10 +63,10 @@ class UpdateFragment : Fragment() {
     private fun deletePatientData() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") { _, _ ->
-            mPatientViewModel.deletePatientData(args.currentPatient)
+            mPatientViewModel.deletePatientData(args.viewCurrentPatient)
             Toast.makeText(
                 requireContext(),
-                "Successfully Removed ${args.currentPatient.name} !",
+                "Successfully Removed ${args.viewCurrentPatient.name} !",
                 Toast.LENGTH_SHORT
             ).show()
             findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
@@ -78,8 +78,8 @@ class UpdateFragment : Fragment() {
                 Toast.LENGTH_SHORT
             ).show()
         }
-        builder.setTitle("Delete ${args.currentPatient.name}")
-        builder.setMessage("Confirming removing ${args.currentPatient.name}")
+        builder.setTitle("Delete ${args.viewCurrentPatient.name}")
+        builder.setMessage("Confirming removing ${args.viewCurrentPatient.name}")
         builder.create().show()
     }
 
@@ -100,7 +100,7 @@ class UpdateFragment : Fragment() {
         if (inputCheck(upPatientName, upPatientDiagnosis)) {
             val updatedPatientData =
                 PatientEntity(
-                    args.currentPatient.id,
+                    args.viewCurrentPatient.id,
                     upPatientName,
                     upPatientDiagnosis,
                     upPatientGender,
@@ -117,7 +117,7 @@ class UpdateFragment : Fragment() {
             mPatientViewModel.updatePatientData(updatedPatientData)
 
             Toast.makeText(requireContext(), "Updated successfully", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
+            findNavController().navigate(R.id.action_UpdateFragment_to_viewFragment, arguments)
         } else {
             Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
         }
