@@ -43,15 +43,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
-            android:layout_marginTop="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_view_historyLabel"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/ll_view_historyLabel"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -59,16 +58,25 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
-            android:layout_marginTop="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_view_patientAddress"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toBottomOf="@id/tv_view_patientName"
             tools:ignore="TextContrastCheck" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_smiley_sunglasses"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_view_historyLabel"
+            android:contentDescription="@string/avatar" />
 
         <TextView
             android:id="@+id/tv_view_patientGender"
@@ -81,10 +89,12 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_view_patientAge"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_view_patientAge"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintStart_toEndOf="@+id/tv_view_patientAge"
+            app:layout_constraintTop_toTopOf="@+id/tv_view_patientAge"
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_patientAddress"
@@ -99,8 +109,9 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_view_patientGender"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_patientHabits"
@@ -116,7 +127,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_patientAddress"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_presentHistory"
@@ -132,7 +144,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_patientHabits"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_pastHistory"
@@ -148,7 +161,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_presentHistory"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_chiefComplain"
@@ -164,7 +178,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_pastHistory"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_patientDiagnosis"
@@ -180,7 +195,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_chiefComplain"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/ll_view_examination"
@@ -193,7 +209,8 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_view_patientDiagnosis">
+            app:layout_constraintTop_toBottomOf="@id/tv_view_patientDiagnosis"
+            tools:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -228,7 +245,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_view_examination"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_temp"
@@ -246,7 +264,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_bloodPressure"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/tv_view_oxygenSaturation"
@@ -264,7 +283,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_temp"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/ll_view_treatment"
@@ -277,7 +297,8 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_view_oxygenSaturation">
+            app:layout_constraintTop_toBottomOf="@id/tv_view_oxygenSaturation"
+            tools:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -312,7 +333,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_view_treatment"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
 
         <Button
             android:id="@+id/bt_view_edit_patient"

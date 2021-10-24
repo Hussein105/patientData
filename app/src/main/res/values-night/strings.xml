@@ -17,4 +17,6 @@
     <string name="menu_delete">Delete</string>
     <string name="example">Example</string>
     <string name="age">Age</string>
+    <string name="delete_all_data">Delete all data</string>
+    <string name="avatar">Avatar</string>
 </resources>

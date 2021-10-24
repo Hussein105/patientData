@@ -44,7 +44,7 @@ class ViewFragment : Fragment() {
                 tvViewPatientName.visibility = View.VISIBLE
             }
 
-            tvViewPatientAge.text = "Age: ${args.viewCurrentPatient.age}"
+            tvViewPatientAge.text = "Age: ${args.viewCurrentPatient.age} years"
             if (tvViewPatientAge.text == "Age: ") {
                 tvViewPatientAge.visibility = View.GONE
             } else {
@@ -135,6 +135,25 @@ class ViewFragment : Fragment() {
             } else {
                 tvViewTreatment.visibility = View.VISIBLE
                 llViewTreatment.visibility = View.VISIBLE
+            }
+
+            if (args.viewCurrentPatient.gender == "male" ||
+                args.viewCurrentPatient.gender == "Male" &&
+                args.viewCurrentPatient.gender!! <= 18.toString()
+            ) {
+                ivAvatar.setImageResource(R.drawable.ic_avatar_male_child)
+            } else if (args.viewCurrentPatient.gender == "male" ||
+                args.viewCurrentPatient.gender == "Male" &&
+                args.viewCurrentPatient.gender!! >= 18.toString()
+            ) {
+                ivAvatar.setImageResource(R.drawable.ic_avatar_male)
+            } else if (args.viewCurrentPatient.gender == "female" ||
+                args.viewCurrentPatient.gender == "Female" &&
+                args.viewCurrentPatient.gender!! <= 18.toString()
+            ) {
+                ivAvatar.setImageResource(R.drawable.ic_avatar_female_child)
+            } else {
+                ivAvatar.setImageResource(R.drawable.ic_avatar_female)
             }
 
             btViewEditPatient.setOnClickListener {

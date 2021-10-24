@@ -1,7 +1,6 @@
 package com.ho.patients.fragments
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -71,39 +70,37 @@ class UpdateFragment : Fragment() {
         val upTreatment = binding.etUpdateTreatment.text.toString().trim()
         val upAge = binding.etUpdatePatientAge.text.toString().trim()
 
-        if (inputCheck(upPatientName, upPatientDiagnosis)) {
-            val updatedPatientData =
-                PatientEntity(
-                    args.viewCurrentPatient.id,
-                    upPatientName,
-                    upPatientDiagnosis,
-                    upPatientGender,
-                    upPatientAddress,
-                    upPatientHabits,
-                    upPresentHistory,
-                    upPastHistory,
-                    upComplain,
-                    upBloodPressure,
-                    upTemperature,
-                    upSpo2,
-                    upTreatment,
-                    upAge
-                )
-            mPatientViewModel.updatePatientData(updatedPatientData)
+        if (upPatientName != "" && upPatientDiagnosis != "" && upPatientGender != "" && upAge != "") {
+            if (upPatientGender == "male" || upPatientGender == "Male" || upPatientGender == "female" || upPatientGender == "Female") {
+                val updatedPatientData =
+                    PatientEntity(
+                        args.viewCurrentPatient.id,
+                        upPatientName,
+                        upPatientDiagnosis,
+                        upPatientGender,
+                        upPatientAddress,
+                        upPatientHabits,
+                        upPresentHistory,
+                        upPastHistory,
+                        upComplain,
+                        upBloodPressure,
+                        upTemperature,
+                        upSpo2,
+                        upTreatment,
+                        upAge
+                    )
+                mPatientViewModel.updatePatientData(updatedPatientData)
 
-            Toast.makeText(
-                requireContext(),
-                "${args.viewCurrentPatient.name} has been updated successfully",
-                Toast.LENGTH_SHORT
-            ).show()
-            findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
-        } else {
-            Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "${args.viewCurrentPatient.name} has been updated successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
+            } else {
+                Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
-
-    private fun inputCheck(name: String, diagnosis: String): Boolean {
-        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(diagnosis))
     }
 
     override fun onDestroy() {

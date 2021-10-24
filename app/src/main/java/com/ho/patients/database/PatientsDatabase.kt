@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [PatientEntity::class], version = 12, exportSchema = true)
+@Database(entities = [PatientEntity::class], version = 12, exportSchema = false)
 abstract class PatientsDatabase : RoomDatabase() {
 
     abstract fun patientDao(): PatientsDao

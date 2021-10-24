@@ -17,4 +17,8 @@ class PatientsRepo(private val patientsDao: PatientsDao) {
     suspend fun deletePatientData(patientData: PatientEntity) {
         patientsDao.deletePatientData(patientData)
     }
+
+    suspend fun deleteAllData() {
+        patientsDao.deleteAllData()
+    }
 }

@@ -1,7 +1,6 @@
 package com.ho.patients.fragments
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,38 +55,35 @@ class AddFragment : Fragment() {
         val treatment = binding.etTreatment.text.toString().trim()
         val age = binding.etPatientAge.text.toString().trim()
 
-        if (inputCheck(patientName, patientDiagnosis, patientGender, age)) {
-            val patientData = PatientEntity(
-                0,
-                patientName,
-                patientDiagnosis,
-                patientGender,
-                patientAddress,
-                patientHabits,
-                presentHistory,
-                pastHistory,
-                complain,
-                bloodPressure,
-                temperature,
-                oxygenSaturation,
-                treatment,
-                age
-            )
-            mPatientViewModel.addPatientData(patientData)
-            Toast.makeText(requireContext(), "Saved!", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_AddFragment_to_PatientListFragment)
-        } else {
-            Toast.makeText(requireContext(), "Failed!", Toast.LENGTH_SHORT).show()
+        if (patientName != "" && patientDiagnosis != "" && patientGender != "" && age != "") {
+            if (patientGender == "male" || patientGender == "Male" || patientGender == "female" || patientGender == "Female") {
+                val patientData = PatientEntity(
+                    0,
+                    patientName,
+                    patientDiagnosis,
+                    patientGender,
+                    patientAddress,
+                    patientHabits,
+                    presentHistory,
+                    pastHistory,
+                    complain,
+                    bloodPressure,
+                    temperature,
+                    oxygenSaturation,
+                    treatment,
+                    age
+                )
+                mPatientViewModel.addPatientData(patientData)
+                Toast.makeText(requireContext(), "Saved!", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_AddFragment_to_PatientListFragment)
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Patient name, age, gender & diagnosis are all needed to create a new profile",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
-    }
-
-    private fun inputCheck(
-        name: String,
-        diagnosis: String,
-        patientGender: String,
-        age: String
-    ): Boolean {
-        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(diagnosis) && TextUtils.isEmpty(patientGender) && TextUtils.isEmpty(age))
     }
 
     override fun onDestroyView() {

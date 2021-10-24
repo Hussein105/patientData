@@ -38,4 +38,10 @@ class PatientViewModel(application: Application) : AndroidViewModel(application)
             patientsRepo.deletePatientData(patient)
         }
     }
+
+    fun deleteAllData() {
+        viewModelScope.launch(Dispatchers.IO) {
+            patientsRepo.deleteAllData()
+        }
+    }
 }

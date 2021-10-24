@@ -31,19 +31,31 @@ class PatientAdapter : RecyclerView.Adapter<PatientAdapter.RecyclerViewHolder>()
         val currentPatient = patientsList[position]
         holder.itemView.apply {
             tv_patient_name.text = currentPatient.name
-            tv_patient_diagnosis.text = currentPatient.diagnosis
-
-            cv_patient_list.setOnClickListener {
-                if (ll_btn_container.visibility == View.GONE) {
-                    ll_btn_container.visibility = View.VISIBLE
-                } else if (ll_btn_container.visibility == View.VISIBLE) {
-                    ll_btn_container.visibility = View.GONE
-                }
+            tv_patient_diagnosis.text = "Diagnosed by ${currentPatient.diagnosis}"
+            tv_patient_age.text = "${currentPatient.age} years"
+            if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!! <= 18.toString()) {
+                iv_patient_image.setImageResource(R.drawable.ic_avatar_male_child)
+            } else if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!! >= 18.toString()) {
+                iv_patient_image.setImageResource(R.drawable.ic_avatar_male)
+            } else if (currentPatient.gender == "female" || currentPatient.gender == "Female" && currentPatient.age!! <= 18.toString()) {
+                iv_patient_image.setImageResource(R.drawable.ic_avatar_female_child)
+            } else {
+                iv_patient_image.setImageResource(R.drawable.ic_avatar_female)
             }
 
             bt_viewMore.setOnClickListener {
                 val action =
-                    PatientListFragmentDirections.actionPatientListFragmentToViewFragment(currentPatient)
+                    PatientListFragmentDirections.actionPatientListFragmentToViewFragment(
+                        currentPatient
+                    )
+                findNavController().navigate(action)
+            }
+
+            container_useless.setOnClickListener {
+                val action =
+                    PatientListFragmentDirections.actionPatientListFragmentToViewFragment(
+                        currentPatient
+                    )
                 findNavController().navigate(action)
             }
         }
