@@ -54,8 +54,9 @@ class AddFragment : Fragment() {
         val temperature = binding.etTemp.text.toString().trim()
         val oxygenSaturation = binding.etOxygenSaturation.text.toString().trim()
         val treatment = binding.etTreatment.text.toString().trim()
+        val age = binding.etPatientAge.text.toString().trim()
 
-        if (inputCheck(patientName, patientDiagnosis)) {
+        if (inputCheck(patientName, patientDiagnosis, patientGender, age)) {
             val patientData = PatientEntity(
                 0,
                 patientName,
@@ -69,7 +70,8 @@ class AddFragment : Fragment() {
                 bloodPressure,
                 temperature,
                 oxygenSaturation,
-                treatment
+                treatment,
+                age
             )
             mPatientViewModel.addPatientData(patientData)
             Toast.makeText(requireContext(), "Saved!", Toast.LENGTH_SHORT).show()
@@ -79,8 +81,13 @@ class AddFragment : Fragment() {
         }
     }
 
-    private fun inputCheck(name: String, diagnosis: String): Boolean {
-        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(diagnosis))
+    private fun inputCheck(
+        name: String,
+        diagnosis: String,
+        patientGender: String,
+        age: String
+    ): Boolean {
+        return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(diagnosis) && TextUtils.isEmpty(patientGender) && TextUtils.isEmpty(age))
     }
 
     override fun onDestroyView() {

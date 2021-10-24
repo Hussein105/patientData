@@ -15,4 +15,6 @@
     <string name="et_patient_history">Patient History</string>
     <string name="bt_edit">Edit</string>
     <string name="menu_delete">Delete</string>
+    <string name="example">Example</string>
+    <string name="age">Age</string>
 </resources>

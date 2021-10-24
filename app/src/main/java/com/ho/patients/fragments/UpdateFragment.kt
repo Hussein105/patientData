@@ -47,6 +47,7 @@ class UpdateFragment : Fragment() {
             etUpdatePresentHistory.setText(args.viewCurrentPatient.presentHistory)
             etUpdateTemp.setText(args.viewCurrentPatient.temperature)
             etUpdateTreatment.setText(args.viewCurrentPatient.treatment)
+            etUpdatePatientAge.setText(args.viewCurrentPatient.age)
 
 
             btUpdatePatient.setOnClickListener {
@@ -68,6 +69,7 @@ class UpdateFragment : Fragment() {
         val upTemperature = binding.etUpdateTemp.text.toString().trim()
         val upSpo2 = binding.etUpdateOxygenSaturation.text.toString().trim()
         val upTreatment = binding.etUpdateTreatment.text.toString().trim()
+        val upAge = binding.etUpdatePatientAge.text.toString().trim()
 
         if (inputCheck(upPatientName, upPatientDiagnosis)) {
             val updatedPatientData =
@@ -84,7 +86,8 @@ class UpdateFragment : Fragment() {
                     upBloodPressure,
                     upTemperature,
                     upSpo2,
-                    upTreatment
+                    upTreatment,
+                    upAge
                 )
             mPatientViewModel.updatePatientData(updatedPatientData)
 

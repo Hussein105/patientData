@@ -52,6 +52,22 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
+            android:id="@+id/et_patientAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:layout_marginTop="7dp"
+            android:ems="10"
+            android:hint="@string/age"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_patientName"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
             android:id="@+id/et_patientGender"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -63,7 +79,7 @@
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_patientName"
+            app:layout_constraintTop_toBottomOf="@+id/et_patientAge"
             tools:ignore="TextContrastCheck" />
 
         <EditText

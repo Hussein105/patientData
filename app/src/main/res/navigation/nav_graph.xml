@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/viewFragment"
         android:name="com.ho.patients.fragments.ViewFragment"
-        android:label="OverView"
+        android:label="@string/fourth_fragment_label"
         tools:layout="@layout/fragment_view">
         <action
             android:id="@+id/action_viewFragment_to_UpdateFragment"

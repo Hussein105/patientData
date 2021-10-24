@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [PatientEntity::class], version = 11, exportSchema = true)
+@Database(entities = [PatientEntity::class], version = 12, exportSchema = true)
 abstract class PatientsDatabase : RoomDatabase() {
 
     abstract fun patientDao(): PatientsDao
@@ -76,6 +76,12 @@ abstract class PatientsDatabase : RoomDatabase() {
             }
         }
 
+        private val migration11_12: Migration = object : Migration(11, 12) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE 'patients' ADD COLUMN 'age' TEXT")
+            }
+        }
+
         fun getDatabase(context: Context): PatientsDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
@@ -96,7 +102,8 @@ abstract class PatientsDatabase : RoomDatabase() {
                     migration7_8,
                     migration8_9,
                     migration9_10,
-                    migration10_11
+                    migration10_11,
+                    migration11_12
                 ).build()
                 INSTANCE = instance
                 return instance

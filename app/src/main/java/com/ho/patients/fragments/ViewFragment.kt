@@ -37,18 +37,105 @@ class ViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            tvViewPatientName.text = args.viewCurrentPatient.name
-            tvViewPatientDiagnosis.text = args.viewCurrentPatient.diagnosis
-            tvViewBloodPressure.text = args.viewCurrentPatient.bloodPressure
-            tvViewChiefComplain.text = args.viewCurrentPatient.complain
-            tvViewOxygenSaturation.text = args.viewCurrentPatient.oxygenSaturation
-            tvViewPastHistory.text = args.viewCurrentPatient.pastHistory
-            tvViewPatientAddress.text = args.viewCurrentPatient.address
-            tvViewPatientGender.text = args.viewCurrentPatient.gender
-            tvViewPatientHabits.text = args.viewCurrentPatient.habits
-            tvViewPresentHistory.text = args.viewCurrentPatient.presentHistory
-            tvViewTemp.text = args.viewCurrentPatient.temperature
-            tvViewTreatment.text = args.viewCurrentPatient.treatment
+            tvViewPatientName.text = "Name: ${args.viewCurrentPatient.name}"
+            if (tvViewPatientName.text == "Name: ") {
+                tvViewPatientName.visibility = View.GONE
+            } else {
+                tvViewPatientName.visibility = View.VISIBLE
+            }
+
+            tvViewPatientAge.text = "Age: ${args.viewCurrentPatient.age}"
+            if (tvViewPatientAge.text == "Age: ") {
+                tvViewPatientAge.visibility = View.GONE
+            } else {
+                tvViewPatientAge.visibility = View.VISIBLE
+            }
+
+            tvViewPatientDiagnosis.text = "Diagnosis: ${args.viewCurrentPatient.diagnosis}"
+            if (tvViewPatientDiagnosis.text == "Diagnosis: ") {
+                tvViewPatientDiagnosis.visibility = View.GONE
+            } else {
+                tvViewPatientDiagnosis.visibility = View.VISIBLE
+            }
+
+            tvViewBloodPressure.text = "Blood pressure: ${args.viewCurrentPatient.bloodPressure}"
+            if (tvViewBloodPressure.text == "Blood pressure: ") {
+                tvViewBloodPressure.visibility = View.GONE
+                llViewExamination.visibility = View.GONE
+            } else {
+                tvViewBloodPressure.visibility = View.VISIBLE
+                llViewExamination.visibility = View.VISIBLE
+            }
+
+            tvViewChiefComplain.text = "Patient Complain from: ${args.viewCurrentPatient.complain}"
+            if (tvViewChiefComplain.text == "Patient Complain from: ") {
+                tvViewChiefComplain.visibility = View.GONE
+            } else {
+                tvViewChiefComplain.visibility = View.VISIBLE
+            }
+
+            tvViewOxygenSaturation.text = "SPO2: ${args.viewCurrentPatient.oxygenSaturation}"
+            if (tvViewOxygenSaturation.text == "SPO2: ") {
+                tvViewOxygenSaturation.visibility = View.GONE
+                tvViewOxygenSaturation.visibility = View.GONE
+            } else {
+                tvViewOxygenSaturation.visibility = View.VISIBLE
+                llViewExamination.visibility = View.VISIBLE
+            }
+
+            tvViewPastHistory.text = "Past history: ${args.viewCurrentPatient.pastHistory}"
+            if (tvViewPastHistory.text == "Past history: ") {
+                tvViewPastHistory.visibility = View.GONE
+            } else {
+                tvViewPastHistory.visibility = View.VISIBLE
+            }
+
+            tvViewPatientAddress.text = "Patient address: ${args.viewCurrentPatient.address}"
+            if (tvViewPatientAddress.text == "Patient address: ") {
+                tvViewPatientAddress.visibility = View.GONE
+
+            } else {
+                tvViewPatientAddress.visibility = View.VISIBLE
+            }
+
+            tvViewPatientGender.text = "Gender: ${args.viewCurrentPatient.gender}"
+            if (tvViewPatientGender.text == "Gender: ") {
+                tvViewPatientGender.visibility = View.GONE
+            } else {
+                tvViewPatientGender.visibility = View.VISIBLE
+            }
+
+            tvViewPatientHabits.text = "Special habits: ${args.viewCurrentPatient.habits}"
+            if (tvViewPatientHabits.text == "Special habits: ") {
+                tvViewPatientHabits.visibility = View.GONE
+            } else {
+                tvViewPatientHabits.visibility = View.VISIBLE
+            }
+
+            tvViewPresentHistory.text = "Present history: ${args.viewCurrentPatient.presentHistory}"
+            if (tvViewPresentHistory.text == "Present history: ") {
+                tvViewPresentHistory.visibility = View.GONE
+            } else {
+                tvViewPresentHistory.visibility = View.VISIBLE
+            }
+
+            tvViewTemp.text = "Temperature: ${args.viewCurrentPatient.temperature}"
+            if (tvViewTemp.text == "Temperature: ") {
+                tvViewTemp.visibility = View.GONE
+                llViewExamination.visibility = View.GONE
+            } else {
+                tvViewTemp.visibility = View.VISIBLE
+                llViewExamination.visibility = View.VISIBLE
+            }
+
+            tvViewTreatment.text = "Treatment plan: ${args.viewCurrentPatient.treatment}"
+            if (tvViewTreatment.text == "Treatment plan: ") {
+                tvViewTreatment.visibility = View.GONE
+                llViewTreatment.visibility = View.GONE
+            } else {
+                tvViewTreatment.visibility = View.VISIBLE
+                llViewTreatment.visibility = View.VISIBLE
+            }
 
             btViewEditPatient.setOnClickListener {
                 findNavController().navigate(
@@ -95,7 +182,6 @@ class ViewFragment : Fragment() {
         builder.setMessage("Confirming removing ${args.viewCurrentPatient.name}")
         builder.create().show()
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

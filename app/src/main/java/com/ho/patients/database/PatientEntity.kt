@@ -21,5 +21,6 @@ data class PatientEntity(
     @ColumnInfo(name = "bloodPressure") var bloodPressure: String?,
     @ColumnInfo(name = "temperature") var temperature: String?,
     @ColumnInfo(name = "oxygenSaturation") var oxygenSaturation: String?,
-    @ColumnInfo(name = "treatment") var treatment: String?
+    @ColumnInfo(name = "treatment") var treatment: String?,
+    @ColumnInfo(name = "age") var age: String?
 ) : Parcelable
