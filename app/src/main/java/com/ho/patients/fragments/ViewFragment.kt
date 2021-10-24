@@ -139,17 +139,17 @@ class ViewFragment : Fragment() {
 
             if (args.viewCurrentPatient.gender == "male" ||
                 args.viewCurrentPatient.gender == "Male" &&
-                args.viewCurrentPatient.gender!! <= 18.toString()
+                args.viewCurrentPatient.age!!.toInt() < 18
             ) {
                 ivAvatar.setImageResource(R.drawable.ic_avatar_male_child)
             } else if (args.viewCurrentPatient.gender == "male" ||
                 args.viewCurrentPatient.gender == "Male" &&
-                args.viewCurrentPatient.gender!! >= 18.toString()
+                args.viewCurrentPatient.age!!.toInt() > 18
             ) {
                 ivAvatar.setImageResource(R.drawable.ic_avatar_male)
             } else if (args.viewCurrentPatient.gender == "female" ||
                 args.viewCurrentPatient.gender == "Female" &&
-                args.viewCurrentPatient.gender!! <= 18.toString()
+                args.viewCurrentPatient.age!!.toInt() < 18
             ) {
                 ivAvatar.setImageResource(R.drawable.ic_avatar_female_child)
             } else {

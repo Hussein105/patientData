@@ -33,11 +33,11 @@ class PatientAdapter : RecyclerView.Adapter<PatientAdapter.RecyclerViewHolder>()
             tv_patient_name.text = currentPatient.name
             tv_patient_diagnosis.text = "Diagnosed by ${currentPatient.diagnosis}"
             tv_patient_age.text = "${currentPatient.age} years"
-            if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!! <= 18.toString()) {
+            if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!!.toInt() < 18) {
                 iv_patient_image.setImageResource(R.drawable.ic_avatar_male_child)
-            } else if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!! >= 18.toString()) {
+            } else if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!!.toInt() > 18) {
                 iv_patient_image.setImageResource(R.drawable.ic_avatar_male)
-            } else if (currentPatient.gender == "female" || currentPatient.gender == "Female" && currentPatient.age!! <= 18.toString()) {
+            } else if (currentPatient.gender == "female" || currentPatient.gender == "Female" && currentPatient.age!!.toInt() < 18) {
                 iv_patient_image.setImageResource(R.drawable.ic_avatar_female_child)
             } else {
                 iv_patient_image.setImageResource(R.drawable.ic_avatar_female)
