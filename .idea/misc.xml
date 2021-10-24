@@ -11,6 +11,8 @@
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/ic_avatar_female.xml" value="0.2703125" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/ic_delete.xml" value="0.1925925925925926" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/ic_edit.xml" value="0.2703125" />
+        <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/ic_patient_avatar.xml" value="0.2703125" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/user_avatar_svgrepo_com.xml" value="0.2703125" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/layout/activity_main.xml" value="0.536" />
@@ -22,6 +24,8 @@
         <entry key="..\:/Projects/PatientData/app/src/main/res/layout/patient_list_item.xml" value="0.536" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/menu/menu_delete.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/menu/menu_delete_all.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/PatientData/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
+        <entry key="..\:/Projects/PatientData/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
       </map>
     </option>
   </component>

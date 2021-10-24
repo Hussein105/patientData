@@ -14,17 +14,11 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/AddFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@android:anim/slide_in_left" />
         <action
             android:id="@+id/action_PatientListFragment_to_viewFragment"
             app:destination="@id/viewFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/AddFragment"
@@ -34,10 +28,7 @@
         <action
             android:id="@+id/action_AddFragment_to_PatientListFragment"
             app:destination="@id/PatientListFragment"
-            app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/PatientListFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -50,9 +41,6 @@
             android:id="@+id/action_UpdateFragment_to_PatientListFragment"
             app:destination="@id/PatientListFragment"
             app:enterAnim="@android:anim/slide_out_right"
-            app:exitAnim="@android:anim/slide_in_left"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/PatientListFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -64,20 +52,14 @@
         <action
             android:id="@+id/action_viewFragment_to_UpdateFragment"
             app:destination="@id/UpdateFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@android:anim/fade_in" />
         <argument
             android:name="viewCurrentPatient"
             app:argType="com.ho.patients.database.PatientEntity" />
         <action
             android:id="@+id/action_viewFragment_to_PatientListFragment"
             app:destination="@id/PatientListFragment"
-            app:enterAnim="@android:anim/slide_out_right"
             app:exitAnim="@android:anim/slide_in_left"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/PatientListFragment"
             app:popUpToInclusive="true" />
     </fragment>
