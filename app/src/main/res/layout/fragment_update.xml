@@ -278,20 +278,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_update_treatment" />
-
-        <Button
-            android:id="@+id/bt_delete"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:drawableLeft="@drawable/ic_delete"
-            android:drawablePadding="2dp"
-            android:drawableTint="@color/red"
-            android:text="@string/bt_delete"
-            android:textColor="#DD2C00"
-            app:layout_constraintBottom_toBottomOf="@id/bt_update_patient"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/bt_update_patient" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

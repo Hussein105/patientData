@@ -1,9 +1,9 @@
 package com.ho.patients.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -18,6 +18,11 @@ class ViewFragment : Fragment() {
 
     private val args by navArgs<ViewFragmentArgs>()
     private lateinit var mPatientViewModel: PatientViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,10 +51,51 @@ class ViewFragment : Fragment() {
             tvViewTreatment.text = args.viewCurrentPatient.treatment
 
             btViewEditPatient.setOnClickListener {
-                findNavController().navigate(R.id.action_viewFragment_to_UpdateFragment, requireArguments())
+                findNavController().navigate(
+                    R.id.action_viewFragment_to_UpdateFragment,
+                    requireArguments()
+                )
             }
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_delete, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_delete) {
+            deletePatientData()
+        } else {
+            findNavController().navigate(R.id.action_viewFragment_to_PatientListFragment)
+        }
+        return true
+    }
+
+    private fun deletePatientData() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            mPatientViewModel.deletePatientData(args.viewCurrentPatient)
+            Toast.makeText(
+                requireContext(),
+                "Successfully Removed ${args.viewCurrentPatient.name} !",
+                Toast.LENGTH_SHORT
+            ).show()
+            findNavController().navigate(R.id.action_viewFragment_to_PatientListFragment)
+        }
+        builder.setNegativeButton("No") { _, _ ->
+            Toast.makeText(
+                requireContext(),
+                "Your data still safe",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        builder.setTitle("Delete ${args.viewCurrentPatient.name}")
+        builder.setMessage("Confirming removing ${args.viewCurrentPatient.name}")
+        builder.create().show()
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()

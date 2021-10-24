@@ -13,8 +13,7 @@
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/AddFragment"
-            app:popUpToInclusive="false" />
+            app:destination="@id/AddFragment" />
         <action
             android:id="@+id/action_PatientListFragment_to_viewFragment"
             app:destination="@id/viewFragment" />
@@ -24,7 +23,6 @@
         android:name="com.ho.patients.fragments.AddFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_add">
-
         <action
             android:id="@+id/action_AddFragment_to_PatientListFragment"
             app:destination="@id/PatientListFragment"
@@ -41,12 +39,6 @@
             app:destination="@id/PatientListFragment"
             app:popUpTo="@id/PatientListFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_UpdateFragment_to_viewFragment"
-            app:destination="@id/viewFragment" />
-        <argument
-            android:name="updateCurrentPatient"
-            app:argType="com.ho.patients.database.PatientEntity" />
     </fragment>
     <fragment
         android:id="@+id/viewFragment"
@@ -59,5 +51,10 @@
         <argument
             android:name="viewCurrentPatient"
             app:argType="com.ho.patients.database.PatientEntity" />
+        <action
+            android:id="@+id/action_viewFragment_to_PatientListFragment"
+            app:destination="@id/PatientListFragment"
+            app:popUpTo="@id/PatientListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

@@ -26,4 +26,5 @@
     <string name="et_address">Address</string>
     <string name="et_patient_history">Patient History</string>
     <string name="bt_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
 </resources>

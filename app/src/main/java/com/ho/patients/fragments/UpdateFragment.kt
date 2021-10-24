@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -53,39 +52,12 @@ class UpdateFragment : Fragment() {
             btUpdatePatient.setOnClickListener {
                 updatePatientData()
             }
-
-            btDelete.setOnClickListener {
-                deletePatientData()
-            }
         }
-    }
-
-    private fun deletePatientData() {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("Yes") { _, _ ->
-            mPatientViewModel.deletePatientData(args.viewCurrentPatient)
-            Toast.makeText(
-                requireContext(),
-                "Successfully Removed ${args.viewCurrentPatient.name} !",
-                Toast.LENGTH_SHORT
-            ).show()
-            findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
-        }
-        builder.setNegativeButton("No") { _, _ ->
-            Toast.makeText(
-                requireContext(),
-                "Your data still safe",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        builder.setTitle("Delete ${args.viewCurrentPatient.name}")
-        builder.setMessage("Confirming removing ${args.viewCurrentPatient.name}")
-        builder.create().show()
     }
 
     private fun updatePatientData() {
-        val upPatientName = binding.etUpdatePatientName.text.toString()
-        val upPatientDiagnosis = binding.etUpdatePatientDiagnosis.text.toString()
+        val upPatientName = binding.etUpdatePatientName.text.toString().trim()
+        val upPatientDiagnosis = binding.etUpdatePatientDiagnosis.text.toString().trim()
         val upPatientGender = binding.etUpdatePatientGender.text.toString().trim()
         val upPatientAddress = binding.etUpdatePatientAddress.text.toString().trim()
         val upPatientHabits = binding.etUpdatePatientHabits.text.toString().trim()
@@ -116,8 +88,12 @@ class UpdateFragment : Fragment() {
                 )
             mPatientViewModel.updatePatientData(updatedPatientData)
 
-            Toast.makeText(requireContext(), "Updated successfully", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_UpdateFragment_to_viewFragment, arguments)
+            Toast.makeText(
+                requireContext(),
+                "${args.viewCurrentPatient.name} has been updated successfully",
+                Toast.LENGTH_SHORT
+            ).show()
+            findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
         } else {
             Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
         }
