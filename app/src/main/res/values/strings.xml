@@ -33,4 +33,6 @@
     <string name="delete_all_data">Delete all data</string>
     <string name="pass_key">Hussein1998</string>
     <string name="avatar">Avatar</string>
+    <string name="pli_diagnosis">Diagnosed by:</string>
+    <string name="pli_years">year(s)</string>
 </resources>

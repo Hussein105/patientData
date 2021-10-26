@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradiant_bg"
     tools:context=".fragments.ViewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,6 +29,7 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="@string/et_patient_history"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -35,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="end|center"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/white" />
         </LinearLayout>
 
         <TextView
@@ -43,11 +45,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toBottomOf="@+id/ll_view_historyLabel"
@@ -58,11 +62,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tv_view_patientAddress"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toBottomOf="@id/tv_view_patientName"
@@ -73,21 +79,24 @@
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
+            android:background="@drawable/tv_background"
+            android:contentDescription="@string/avatar"
             android:src="@drawable/ic_smiley_sunglasses"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_view_historyLabel"
-            android:contentDescription="@string/avatar" />
+            app:layout_constraintTop_toBottomOf="@+id/ll_view_historyLabel" />
 
         <TextView
             android:id="@+id/tv_view_patientGender"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/tv_view_patientAge"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,11 +110,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,11 +129,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -135,11 +148,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -152,11 +167,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -169,11 +186,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -186,11 +205,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -218,6 +239,7 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="@string/et_patient_examinations"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -225,7 +247,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="end|center"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/white" />
         </LinearLayout>
 
         <TextView
@@ -234,6 +256,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
             android:layout_marginTop="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:paddingStart="8dp"
@@ -241,6 +264,7 @@
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -253,6 +277,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:paddingStart="8dp"
@@ -260,6 +285,7 @@
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -272,6 +298,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:paddingStart="8dp"
@@ -279,6 +306,7 @@
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -306,6 +334,7 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="@string/tv_treatment"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -313,7 +342,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="end|center"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/white" />
         </LinearLayout>
 
         <TextView
@@ -322,6 +351,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
             android:layout_marginTop="7dp"
+            android:background="@drawable/tv_background"
             android:minHeight="24dp"
             android:padding="4dp"
             android:paddingStart="8dp"
@@ -329,6 +359,7 @@
             android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -338,8 +369,11 @@
 
         <Button
             android:id="@+id/bt_view_edit_patient"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_margin="14dp"
             android:text="@string/bt_edit"
             app:layout_constraintBottom_toBottomOf="parent"

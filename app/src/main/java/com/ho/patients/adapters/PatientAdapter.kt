@@ -31,8 +31,8 @@ class PatientAdapter : RecyclerView.Adapter<PatientAdapter.RecyclerViewHolder>()
         val currentPatient = patientsList[position]
         holder.itemView.apply {
             tv_patient_name.text = currentPatient.name
-            tv_patient_diagnosis.text = "Diagnosed by ${currentPatient.diagnosis}"
-            tv_patient_age.text = "${currentPatient.age} years"
+            tv_patient_diagnosis.text = resources.getString(R.string.pli_diagnosis).plus(currentPatient.diagnosis)
+            tv_patient_age.text = currentPatient.age.plus(resources.getString(R.string.pli_years))
             if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!!.toInt() < 18) {
                 iv_patient_image.setImageResource(R.drawable.ic_avatar_male_child)
             } else if (currentPatient.gender == "male" || currentPatient.gender == "Male" && currentPatient.age!!.toInt() > 18) {
@@ -44,14 +44,6 @@ class PatientAdapter : RecyclerView.Adapter<PatientAdapter.RecyclerViewHolder>()
             }
 
             bt_viewMore.setOnClickListener {
-                val action =
-                    PatientListFragmentDirections.actionPatientListFragmentToViewFragment(
-                        currentPatient
-                    )
-                findNavController().navigate(action)
-            }
-
-            container_useless.setOnClickListener {
                 val action =
                     PatientListFragmentDirections.actionPatientListFragmentToViewFragment(
                         currentPatient
