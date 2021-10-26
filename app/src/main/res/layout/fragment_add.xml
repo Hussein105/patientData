@@ -35,142 +35,215 @@
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/et_patientName"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:layout_marginTop="7dp"
-            android:ems="10"
+            android:layout_marginTop="8dp"
             android:hint="@string/et_hintName"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_historyLabel"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/ll_historyLabel">
 
-        <EditText
-            android:id="@+id/et_patientAge"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_patientName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_age"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:layout_marginTop="7dp"
-            android:ems="10"
             android:hint="@string/age"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_patientName"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_name">
 
-        <EditText
-            android:id="@+id/et_patientGender"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_patientAge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_gender"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_gender"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_patientAge"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/til_age">
 
-        <EditText
-            android:id="@+id/et_patientAddress"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_patientGender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_address"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_address"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_patientGender"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_gender">
 
-        <EditText
-            android:id="@+id/et_patientHabits"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_patientAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_habits"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_habits"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_patientAddress"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_address">
 
-        <EditText
-            android:id="@+id/et_presentHistory"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_patientHabits"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_presentHistory"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_present_history"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_patientHabits"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_habits">
 
-        <EditText
-            android:id="@+id/et_pastHistory"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_presentHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pastHistory"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_past_history"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_presentHistory"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_presentHistory">
 
-        <EditText
-            android:id="@+id/et_chiefComplain"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pastHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_chiefComplain"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_chief_complain"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_pastHistory"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_pastHistory">
 
-        <EditText
-            android:id="@+id/et_patientDiagnosis"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_chiefComplain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_patientDiagnosis"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_patientDiagnosis"
-            android:importantForAutofill="no"
-            android:inputType="textCapSentences"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_chiefComplain"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_chiefComplain">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_patientDiagnosis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapSentences"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:id="@+id/ll_examination"
@@ -181,7 +254,7 @@
             android:paddingEnd="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_patientDiagnosis">
+            app:layout_constraintTop_toBottomOf="@id/til_patientDiagnosis">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -197,62 +270,85 @@
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/et_bloodPressure"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_bloodPressure"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
             android:layout_marginTop="7dp"
-            android:ems="10"
             android:hint="@string/et_blood_pressure"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_examination"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/ll_examination">
 
-        <EditText
-            android:id="@+id/et_temp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_bloodPressure"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_temp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_temperature"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:minHeight="48dp"
+            app:counterMaxLength="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_bloodPressure"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_bloodPressure">
 
-        <EditText
-            android:id="@+id/et_oxygenSaturation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_temp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_oxygenSaturation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:ems="10"
             android:hint="@string/et_spo2"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:minHeight="48dp"
+            app:counterMaxLength="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_temp"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/til_temp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_oxygenSaturation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:id="@+id/ll_treatment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingStart="2dp"
             android:paddingEnd="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_oxygenSaturation">
+            app:layout_constraintTop_toBottomOf="@id/til_oxygenSaturation">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -268,21 +364,29 @@
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/et_treatment"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_treatment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
             android:layout_marginTop="7dp"
-            android:ems="10"
             android:hint="@string/et_treatment"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:minHeight="48dp"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_treatment"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@id/ll_treatment">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_treatment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/bt_addPatient"
@@ -293,6 +397,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_treatment" />
+            app:layout_constraintTop_toBottomOf="@id/til_treatment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
