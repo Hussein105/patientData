@@ -6,7 +6,6 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -36,7 +35,13 @@ class UpdateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        startDataHandler()
+        binding.btUpdatePatient.setOnClickListener {
+            updatePatientData()
+        }
+    }
 
+    private fun startDataHandler() {
         binding.apply {
             etUpdatePatientName.setText(args.viewCurrentPatient.name)
             etUpdatePatientDiagnosis.setText(args.viewCurrentPatient.diagnosis)
@@ -51,11 +56,6 @@ class UpdateFragment : Fragment() {
             etUpdateTemp.setText(args.viewCurrentPatient.temperature)
             etUpdateTreatment.setText(args.viewCurrentPatient.treatment)
             etUpdatePatientAge.setText(args.viewCurrentPatient.age)
-
-
-            btUpdatePatient.setOnClickListener {
-                updatePatientData()
-            }
         }
     }
 
@@ -74,44 +74,67 @@ class UpdateFragment : Fragment() {
         val upTreatment = binding.etUpdateTreatment.text.toString().trim()
         val upAge = binding.etUpdatePatientAge.text.toString().trim()
 
-        if (upPatientName != "" && upPatientDiagnosis != "" && upPatientGender != "" && upAge != "") {
-            if (upPatientGender == "male" || upPatientGender == "Male" || upPatientGender == "female" || upPatientGender == "Female") {
-                val updatedPatientData =
-                    PatientEntity(
-                        args.viewCurrentPatient.id,
-                        upPatientName,
-                        upPatientDiagnosis,
-                        upPatientGender,
-                        upPatientAddress,
-                        upPatientHabits,
-                        upPresentHistory,
-                        upPastHistory,
-                        upComplain,
-                        upBloodPressure,
-                        upTemperature,
-                        upSpo2,
-                        upTreatment,
-                        upAge
-                    )
-                mPatientViewModel.updatePatientData(updatedPatientData)
-
-                Toast.makeText(
-                    requireContext(),
-                    "${args.viewCurrentPatient.name} has been updated successfully",
-                    Toast.LENGTH_SHORT
-                ).show()
-                findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
-            } else {
-                Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
-            }
+        if (upPatientName == "" || upPatientDiagnosis == "" || upPatientGender == "" || upAge == "") {
+            Toast.makeText(
+                requireContext(),
+                "Patient name, age, correct gender or diagnosis cannot be empty, Please check again!",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else if (
+            upPatientName == args.viewCurrentPatient.name
+            && upPatientDiagnosis == args.viewCurrentPatient.diagnosis
+            && upPatientGender == args.viewCurrentPatient.gender
+            && upPatientAddress == args.viewCurrentPatient.address
+            && upPatientHabits == args.viewCurrentPatient.habits
+            && upPresentHistory == args.viewCurrentPatient.presentHistory
+            && upPastHistory == args.viewCurrentPatient.pastHistory
+            && upComplain == args.viewCurrentPatient.complain
+            && upBloodPressure == args.viewCurrentPatient.bloodPressure
+            && upTemperature == args.viewCurrentPatient.temperature
+            && upSpo2 == args.viewCurrentPatient.oxygenSaturation
+            && upTreatment == args.viewCurrentPatient.treatment
+            && upAge == args.viewCurrentPatient.age
+        ) {
+            Toast.makeText(
+                requireContext(),
+                "No changes to be saved, Please check again!",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            val updatedPatientData =
+                PatientEntity(
+                    args.viewCurrentPatient.id,
+                    upPatientName,
+                    upPatientDiagnosis,
+                    upPatientGender,
+                    upPatientAddress,
+                    upPatientHabits,
+                    upPresentHistory,
+                    upPastHistory,
+                    upComplain,
+                    upBloodPressure,
+                    upTemperature,
+                    upSpo2,
+                    upTreatment,
+                    upAge
+                )
+            mPatientViewModel.updatePatientData(updatedPatientData)
+            Toast.makeText(
+                requireContext(),
+                "${args.viewCurrentPatient.name} has been updated successfully",
+                Toast.LENGTH_SHORT
+            ).show()
+            findNavController().navigate(R.id.action_UpdateFragment_to_PatientListFragment)
         }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("Ok") { _, _ -> }
-        builder.setTitle("All Changes have been discarded")
-        builder.create().show()
+        Toast.makeText(
+            requireContext(),
+            "All data modifications have been discarded",
+            Toast.LENGTH_SHORT
+        ).show()
         return super.onOptionsItemSelected(item)
     }
 

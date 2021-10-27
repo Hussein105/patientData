@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.ho.patients.R
 import com.ho.patients.database.PatientEntity
 import com.ho.patients.databinding.FragmentAddBinding
@@ -37,12 +38,12 @@ class AddFragment : Fragment() {
 
         binding.apply {
             btAddPatient.setOnClickListener {
-                insertNewPatientData()
+                insertNewPatientData(it)
             }
         }
     }
 
-    private fun insertNewPatientData() {
+    private fun insertNewPatientData(view: View) {
         val patientName = binding.etPatientName.text.toString().trim()
         val patientDiagnosis = binding.etPatientDiagnosis.text.toString().trim()
         val patientGender = binding.etPatientGender.text.toString().trim()
@@ -78,13 +79,13 @@ class AddFragment : Fragment() {
                 mPatientViewModel.addPatientData(patientData)
                 Toast.makeText(requireContext(), "Saved!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_AddFragment_to_PatientListFragment)
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Patient name, age, gender & diagnosis are all needed to create a new profile",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
+        } else {
+            Snackbar.make(
+                view,
+                "Patient name, age, correct gender & diagnosis are all needed to create a new profile",
+                Snackbar.LENGTH_SHORT
+            ).show()
         }
     }
 

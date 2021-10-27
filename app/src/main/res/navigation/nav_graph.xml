@@ -18,6 +18,7 @@
         <action
             android:id="@+id/action_PatientListFragment_to_viewFragment"
             app:destination="@id/viewFragment"
+            app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
@@ -28,6 +29,7 @@
         <action
             android:id="@+id/action_AddFragment_to_PatientListFragment"
             app:destination="@id/PatientListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right"
             app:popUpTo="@id/PatientListFragment"
             app:popUpToInclusive="true" />
@@ -40,7 +42,7 @@
         <action
             android:id="@+id/action_UpdateFragment_to_PatientListFragment"
             app:destination="@id/PatientListFragment"
-            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
             app:popUpTo="@id/PatientListFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -52,7 +54,8 @@
         <action
             android:id="@+id/action_viewFragment_to_UpdateFragment"
             app:destination="@id/UpdateFragment"
-            app:enterAnim="@android:anim/fade_in" />
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
         <argument
             android:name="viewCurrentPatient"
             app:argType="com.ho.patients.database.PatientEntity" />
