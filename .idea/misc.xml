@@ -18,8 +18,9 @@
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/ic_patient_avatar.xml" value="0.2703125" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/tv_background.xml" value="0.2703125" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/drawable/user_avatar_svgrepo_com.xml" value="0.2703125" />
-        <entry key="..\:/Projects/PatientData/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Projects/PatientData/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/layout/content_main.xml" value="0.21195652173913043" />
+        <entry key="..\:/Projects/PatientData/app/src/main/res/layout/fragment_.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/layout/fragment_add.xml" value="0.4" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/layout/fragment_patient_list.xml" value="0.4" />
         <entry key="..\:/Projects/PatientData/app/src/main/res/layout/fragment_update.xml" value="0.264" />
