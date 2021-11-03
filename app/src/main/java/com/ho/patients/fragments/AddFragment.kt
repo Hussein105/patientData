@@ -27,7 +27,7 @@ class AddFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        mPatientViewModel = ViewModelProvider(this).get(PatientViewModel::class.java)
+        mPatientViewModel = ViewModelProvider(this)[PatientViewModel::class.java]
         _binding = FragmentAddBinding.inflate(inflater, container, false)
         return binding.root
 

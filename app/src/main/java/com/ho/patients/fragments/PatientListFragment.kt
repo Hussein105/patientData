@@ -33,7 +33,7 @@ class PatientListFragment : Fragment() {
     ): View {
         setHasOptionsMenu(true)
         _binding = FragmentPatientListBinding.inflate(inflater, container, false)
-        mPatientViewModel = ViewModelProvider(this).get(PatientViewModel::class.java)
+        mPatientViewModel = ViewModelProvider(this)[PatientViewModel::class.java]
 
         return binding.root
     }

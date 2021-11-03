@@ -29,7 +29,7 @@ class ViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentViewBinding.inflate(inflater, container, false)
-        mPatientViewModel = ViewModelProvider(this).get(PatientViewModel::class.java)
+        mPatientViewModel = ViewModelProvider(this)[PatientViewModel::class.java]
         return binding.root
     }
 

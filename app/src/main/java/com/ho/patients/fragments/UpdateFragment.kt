@@ -27,7 +27,7 @@ class UpdateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentUpdateBinding.inflate(inflater, container, false)
-        mPatientViewModel = ViewModelProvider(this).get(PatientViewModel::class.java)
+        mPatientViewModel = ViewModelProvider(this)[PatientViewModel::class.java]
 
         setHasOptionsMenu(true)
         return binding.root
