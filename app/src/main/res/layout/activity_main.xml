@@ -18,7 +18,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/gradiant_bg_action_bar"
             app:popupTheme="@style/Theme.PatientData.PopupOverlay" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
