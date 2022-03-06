@@ -47,9 +47,9 @@ class PatientListFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
         }
 
-        mPatientViewModel.readAllPatient.observe(viewLifecycleOwner, {
+        mPatientViewModel.readAllPatient.observe(viewLifecycleOwner) {
             mPatientAdapter.setPatientData(it)
-        })
+        }
 
         binding.fabAdd.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
