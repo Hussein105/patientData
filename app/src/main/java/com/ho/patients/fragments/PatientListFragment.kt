@@ -69,45 +69,49 @@ class PatientListFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_deleteAll) {
-            val builder = AlertDialog.Builder(requireContext())
-            builder.setTitle("Warning you are about to delete are the data you have collected")
-            builder.setMessage("Enter the absolute key to continue")
-            val password = EditText(requireContext())
-            val param = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            param.setMargins(8)
-            password.layoutParams = param
-            password.hint = "Absolute key"
-            builder.setView(password)
-            builder.setIcon(R.drawable.ic_delete)
-            builder.setPositiveButton("Yes") { _, _ ->
-                if (password.text.toString().trim() == "Hussein1998") {
-                    mPatientViewModel.deleteAllData()
-                    Toast.makeText(
-                        requireContext(),
-                        "All data has been deleted!",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "Wrong password :)",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-            builder.setNegativeButton("No") { _, _ ->
+            alertDialogBuilder()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun alertDialogBuilder() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Warning you are about to delete are the data you have collected")
+        builder.setMessage("Enter the absolute key to continue")
+        val password = EditText(requireContext())
+        val param = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        param.setMargins(8)
+        password.layoutParams = param
+        password.hint = "Absolute key"
+        builder.setView(password)
+        builder.setIcon(R.drawable.ic_delete)
+        builder.setPositiveButton("Yes") { _, _ ->
+            if (password.text.toString().trim() == "Hussein1998") {
+                mPatientViewModel.deleteAllData()
                 Toast.makeText(
                     requireContext(),
-                    "Fine, you will keep them",
+                    "All data has been deleted!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Wrong password :)",
                     Toast.LENGTH_SHORT
                 ).show()
             }
-            builder.create().show()
         }
-        return super.onOptionsItemSelected(item)
+        builder.setNegativeButton("No") { _, _ ->
+            Toast.makeText(
+                requireContext(),
+                "Fine, you will keep them",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        builder.create().show()
     }
 
     override fun onDestroyView() {

@@ -14,7 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.PatientData.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.PatientData.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
