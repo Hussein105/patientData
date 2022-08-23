@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/PatientListFragment">
+
+    <fragment
+        android:id="@+id/PatientListFragment"
+        android:name="com.ho.patients.fragments.PatientListFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_patient_list">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/AddFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_PatientListFragment_to_viewFragment"
+            app:destination="@id/viewFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddFragment"
+        android:name="com.ho.patients.fragments.AddFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_add">
+        <action
+            android:id="@+id/action_AddFragment_to_PatientListFragment"
+            app:destination="@id/PatientListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/PatientListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/UpdateFragment"
+        android:name="com.ho.patients.fragments.UpdateFragment"
+        android:label="@string/third_fragment_label"
+        tools:layout="@layout/fragment_update">
+        <action
+            android:id="@+id/action_UpdateFragment_to_PatientListFragment"
+            app:destination="@id/PatientListFragment"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/PatientListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="com.ho.patients.fragments.ViewFragment"
+        android:label="@string/fourth_fragment_label"
+        tools:layout="@layout/fragment_view">
+        <action
+            android:id="@+id/action_viewFragment_to_UpdateFragment"
+            app:destination="@id/UpdateFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <argument
+            android:name="viewCurrentPatient"
+            app:argType="com.ho.patients.database.PatientEntity" />
+        <action
+            android:id="@+id/action_viewFragment_to_PatientListFragment"
+            app:destination="@id/PatientListFragment"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/PatientListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

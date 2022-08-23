@@ -1,11 +1,39 @@
 <resources>
     <string name="app_name">Patient Data</string>
-    <string name="add_patient_data">Add patient data</string>
 
+    <string name="ho_inc">H&amp;O Inc.</string>
+    <string name="bt_add">Save</string>
+    <string name="et_hintName">Patient Name</string>
+    <string name="et_patientDiagnosis">Patient Diagnosis</string>
+    <string name="update">Update</string>
+    <string name="bt_delete">Delete</string>
+
+    <string name="first_fragment_label">Patient List</string>
+    <string name="second_fragment_label">Add Patient</string>
+    <string name="third_fragment_label">Update Information</string>
+    <string name="fourth_fragment_label">Overview</string>
     <string name="bt_viewMore">More</string>
+    <string name="et_gender">Gender</string>
+    <string name="et_treatment">Treatment</string>
+    <string name="tv_treatment">Treatment</string>
+    <string name="et_spo2">SPO2</string>
+    <string name="et_temperature">Temperature</string>
+    <string name="et_blood_pressure">Blood Pressure</string>
+    <string name="et_patient_examinations">Patient Examinations</string>
+    <string name="et_chief_complain">Chief Complain</string>
+    <string name="et_past_history">Past History</string>
+    <string name="et_present_history">Present History</string>
+    <string name="et_habits">Habits</string>
+    <string name="et_address">Address</string>
+    <string name="et_patient_history">Patient History</string>
+    <string name="bt_edit">Edit</string>
     <string name="menu_delete">Delete</string>
+    <string name="example">Example</string>
     <string name="age">Age</string>
     <string name="delete_all_data">Delete all data</string>
+    <string name="pass_key">Hussein1998</string>
+    <string name="avatar">Avatar</string>
     <string name="pli_diagnosis">Diagnosed by:</string>
     <string name="pli_years">year(s)</string>
+    <string name="add_patient_data">Add</string>
 </resources>

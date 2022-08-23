@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_patient_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
@@ -19,6 +20,7 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_useless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/tv_background"
@@ -54,6 +56,7 @@
                 tools:text="Patient Name" />
 
             <TextView
+                android:id="@+id/tv_patient_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -75,6 +78,7 @@
                 tools:text="Diagnosis" />
 
             <Button
+                android:id="@+id/bt_viewMore"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
