@@ -36,4 +36,8 @@
     <string name="pli_diagnosis">Diagnosed by:</string>
     <string name="pli_years">year(s)</string>
     <string name="add_patient_data">Add</string>
+    <string name="alert_dialogue_title">Warning you are about to delete are the data you have collected</string>
+    <string name="alert_dialogue_message">Enter the absolute key to continue</string>
+    <string name="saved">Saved!</string>
+    <string name="update_rejected">Patient name, age, correct gender &amp; diagnosis are all needed to create a new profile</string>
 </resources>

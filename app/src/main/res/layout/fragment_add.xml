@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiant_bg"
     tools:context=".fragments.AddFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,19 +27,19 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="@string/et_patient_history"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="end|center"
-                android:background="@color/white" />
+                android:background="@color/black" />
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -55,8 +54,6 @@
                 android:id="@+id/et_patientName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -64,14 +61,14 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_age"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
             android:hint="@string/age"
             app:counterEnabled="true"
-            app:counterMaxLength="3"
-            app:counterTextColor="@color/white"
+            app:counterMaxLength="2"
+            app:counterTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_name">
@@ -80,8 +77,6 @@
                 android:id="@+id/et_patientAge"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="number"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -89,7 +84,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_gender"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -103,8 +98,6 @@
                 android:id="@+id/et_patientGender"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -113,7 +106,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_address"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -127,8 +120,6 @@
                 android:id="@+id/et_patientAddress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -136,7 +127,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_habits"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -150,8 +141,6 @@
                 android:id="@+id/et_patientHabits"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -159,7 +148,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_presentHistory"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -173,8 +162,6 @@
                 android:id="@+id/et_presentHistory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -183,7 +170,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_pastHistory"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -196,8 +183,6 @@
                 android:id="@+id/et_pastHistory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -205,7 +190,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_chiefComplain"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -219,8 +204,6 @@
                 android:id="@+id/et_chiefComplain"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -228,7 +211,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_patientDiagnosis"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -242,8 +225,6 @@
                 android:id="@+id/et_patientDiagnosis"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapSentences"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -266,20 +247,19 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="@string/et_patient_examinations"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="end|center"
-                android:background="@color/white"
-                android:backgroundTint="@color/white" />
+                android:background="@color/black"/>
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_bloodPressure"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -287,7 +267,7 @@
             android:hint="@string/et_blood_pressure"
             app:counterEnabled="true"
             app:counterMaxLength="6"
-            app:counterTextColor="@color/white"
+            app:counterTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_examination">
@@ -296,8 +276,6 @@
                 android:id="@+id/et_bloodPressure"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="date"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -305,14 +283,14 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_temp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
             android:hint="@string/et_temperature"
             app:counterEnabled="true"
             app:counterMaxLength="2"
-            app:counterTextColor="@color/white"
+            app:counterTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_bloodPressure">
@@ -321,8 +299,6 @@
                 android:id="@+id/et_temp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="number"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -330,14 +306,14 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_oxygenSaturation"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
             android:hint="@string/et_spo2"
             app:counterEnabled="true"
             app:counterMaxLength="3"
-            app:counterTextColor="@color/white"
+            app:counterTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_temp">
@@ -346,8 +322,6 @@
                 android:id="@+id/et_oxygenSaturation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="number"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
@@ -369,7 +343,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="4dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="@string/tv_treatment"
                 android:textStyle="bold" />
 
@@ -377,12 +351,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="end|center"
-                android:background="@color/white" />
+                android:background="@color/black" />
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_treatment"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -397,21 +371,19 @@
                 android:id="@+id/et_treatment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:ems="10"
-                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/bt_addPatient"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/bt_addPatient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
             android:text="@string/bt_add"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_500"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

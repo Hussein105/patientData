@@ -62,11 +62,13 @@ class PatientListFragment : Fragment() {
 
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_delete_all, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_deleteAll) {
             alertDialogBuilder()
@@ -76,8 +78,8 @@ class PatientListFragment : Fragment() {
 
     private fun alertDialogBuilder() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Warning you are about to delete are the data you have collected")
-        builder.setMessage("Enter the absolute key to continue")
+        builder.setTitle(getString(R.string.alert_dialogue_title))
+        builder.setMessage(getString(R.string.alert_dialogue_message))
         val password = EditText(requireContext())
         val param = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,

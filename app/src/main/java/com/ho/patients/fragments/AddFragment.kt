@@ -30,7 +30,6 @@ class AddFragment : Fragment() {
         mPatientViewModel = ViewModelProvider(this)[PatientViewModel::class.java]
         _binding = FragmentAddBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -77,16 +76,20 @@ class AddFragment : Fragment() {
                     age
                 )
                 mPatientViewModel.addPatientData(patientData)
-                Toast.makeText(requireContext(), "Saved!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.saved), Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_AddFragment_to_PatientListFragment)
             }
         } else {
-            Snackbar.make(
-                view,
-                "Patient name, age, correct gender & diagnosis are all needed to create a new profile",
-                Snackbar.LENGTH_SHORT
-            ).show()
+            launchSandbar(view, getString(R.string.update_rejected))
         }
+    }
+
+    private fun launchSandbar(view: View, text: String) {
+        Snackbar.make(
+            view,
+            text,
+            Snackbar.LENGTH_SHORT
+        ).show()
     }
 
     override fun onDestroyView() {
