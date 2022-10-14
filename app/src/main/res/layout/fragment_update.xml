@@ -120,7 +120,6 @@
                 android:id="@+id/et_update_patientAddress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -141,7 +140,6 @@
                 android:id="@+id/et_update_patientHabits"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -162,7 +160,6 @@
                 android:id="@+id/et_update_presentHistory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -184,7 +181,6 @@
                 android:id="@+id/et_update_pastHistory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -205,7 +201,6 @@
                 android:id="@+id/et_update_chiefComplain"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -226,7 +221,6 @@
                 android:id="@+id/et_update_patientDiagnosis"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textCapSentences"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -289,7 +283,7 @@
             android:layout_margin="14dp"
             android:hint="@string/et_temperature"
             app:counterEnabled="true"
-            app:counterMaxLength="2"
+            app:counterMaxLength="3"
             app:counterTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -299,7 +293,7 @@
                 android:id="@+id/et_update_temp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -371,7 +365,6 @@
                 android:id="@+id/et_update_treatment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textCapWords"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
