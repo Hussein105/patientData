@@ -45,11 +45,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_patient_diagnosis"
                 app:layout_constraintStart_toEndOf="@+id/iv_patient_image"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Patient Name" />
@@ -58,11 +56,11 @@
                 android:id="@+id/tv_patient_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
                 android:text="@string/age"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_patient_name"
-                app:layout_constraintStart_toEndOf="@+id/tv_patient_name"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_patient_name" />
 
             <TextView
@@ -70,10 +68,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_patient_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_patient_image"
+                app:layout_constraintTop_toBottomOf="@+id/tv_patient_name"
                 tools:text="Diagnosis" />
 
             <Button
@@ -81,7 +80,8 @@
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_read_more"
+                android:layout_marginTop="8dp"
+                android:drawableEnd="@drawable/ic_read_more"
                 android:drawableTint="@color/purple_500"
                 android:text="@string/bt_viewMore"
                 android:textAllCaps="true"
