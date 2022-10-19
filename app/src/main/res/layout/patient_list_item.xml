@@ -45,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:ems="10"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -58,10 +59,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
                 android:text="@string/age"
-                app:layout_constraintHorizontal_chainStyle="spread"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_patient_name"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintStart_toEndOf="@+id/tv_patient_name"
                 app:layout_constraintTop_toTopOf="@+id/tv_patient_name" />
 
