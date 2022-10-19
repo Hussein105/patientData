@@ -1,5 +1,6 @@
 package com.ho.patients.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -33,6 +34,7 @@ class ViewFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -51,7 +53,7 @@ class ViewFragment : Fragment() {
                 tvViewPatientAge.visibility = View.VISIBLE
             }
 
-            tvViewPatientDiagnosis.text = "Diagnosis: ${args.viewCurrentPatient.diagnosis}"
+            tvViewPatientDiagnosis.text = "Diagnosis:\n ${args.viewCurrentPatient.diagnosis}"
             if (tvViewPatientDiagnosis.text == "Diagnosis: ") {
                 tvViewPatientDiagnosis.visibility = View.GONE
             } else {
@@ -67,7 +69,8 @@ class ViewFragment : Fragment() {
                 llViewExamination.visibility = View.VISIBLE
             }
 
-            tvViewChiefComplain.text = "Patient Complain from: ${args.viewCurrentPatient.complain}"
+            tvViewChiefComplain.text =
+                "Patient Complain from:\n ${args.viewCurrentPatient.complain}"
             if (tvViewChiefComplain.text == "Patient Complain from: ") {
                 tvViewChiefComplain.visibility = View.GONE
             } else {
@@ -83,14 +86,14 @@ class ViewFragment : Fragment() {
                 llViewExamination.visibility = View.VISIBLE
             }
 
-            tvViewPastHistory.text = "Past history: ${args.viewCurrentPatient.pastHistory}"
+            tvViewPastHistory.text = "Past history:\n ${args.viewCurrentPatient.pastHistory}"
             if (tvViewPastHistory.text == "Past history: ") {
                 tvViewPastHistory.visibility = View.GONE
             } else {
                 tvViewPastHistory.visibility = View.VISIBLE
             }
 
-            tvViewPatientAddress.text = "Patient address: ${args.viewCurrentPatient.address}"
+            tvViewPatientAddress.text = "Patient address:\n ${args.viewCurrentPatient.address}"
             if (tvViewPatientAddress.text == "Patient address: ") {
                 tvViewPatientAddress.visibility = View.GONE
 
@@ -105,14 +108,15 @@ class ViewFragment : Fragment() {
                 tvViewPatientGender.visibility = View.VISIBLE
             }
 
-            tvViewPatientHabits.text = "Special habits: ${args.viewCurrentPatient.habits}"
+            tvViewPatientHabits.text = "Special habits:\n ${args.viewCurrentPatient.habits}"
             if (tvViewPatientHabits.text == "Special habits: ") {
                 tvViewPatientHabits.visibility = View.GONE
             } else {
                 tvViewPatientHabits.visibility = View.VISIBLE
             }
 
-            tvViewPresentHistory.text = "Present history: ${args.viewCurrentPatient.presentHistory}"
+            tvViewPresentHistory.text =
+                "Present history:\n ${args.viewCurrentPatient.presentHistory}"
             if (tvViewPresentHistory.text == "Present history: ") {
                 tvViewPresentHistory.visibility = View.GONE
             } else {
@@ -128,7 +132,7 @@ class ViewFragment : Fragment() {
                 llViewExamination.visibility = View.VISIBLE
             }
 
-            tvViewTreatment.text = "Treatment plan: ${args.viewCurrentPatient.treatment}"
+            tvViewTreatment.text = "Treatment plan:\n ${args.viewCurrentPatient.treatment}"
             if (tvViewTreatment.text == "Treatment plan: ") {
                 tvViewTreatment.visibility = View.GONE
                 llViewTreatment.visibility = View.GONE
@@ -165,11 +169,13 @@ class ViewFragment : Fragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_delete, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_delete) {
             deletePatientData()

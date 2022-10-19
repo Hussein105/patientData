@@ -46,14 +46,14 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toBottomOf="@+id/ll_view_historyLabel"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:text="@string/example" />
 
         <TextView
             android:id="@+id/tv_view_patientAge"
@@ -62,14 +62,14 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tv_view_patientAddress"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toBottomOf="@id/tv_view_patientName"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            tools:text="@string/example" />
 
         <ImageView
             android:id="@+id/iv_avatar"
@@ -88,7 +88,6 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -98,6 +97,7 @@
             app:layout_constraintStart_toEndOf="@+id/tv_view_patientAge"
             app:layout_constraintTop_toTopOf="@+id/tv_view_patientAge"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -107,7 +107,6 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -116,6 +115,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -125,7 +125,6 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -134,6 +133,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_patientAddress"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -143,7 +143,6 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -152,6 +151,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_patientHabits"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -161,7 +161,6 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -170,6 +169,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_presentHistory"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -179,7 +179,6 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -188,6 +187,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_pastHistory"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -197,7 +197,6 @@
             android:layout_margin="7dp"
             android:minHeight="24dp"
             android:padding="4dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -206,6 +205,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_chiefComplain"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <LinearLayout
@@ -249,7 +249,6 @@
             android:padding="4dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -258,6 +257,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_view_examination"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -269,7 +269,6 @@
             android:padding="4dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -278,6 +277,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_bloodPressure"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <TextView
@@ -289,7 +289,6 @@
             android:padding="4dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -298,6 +297,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_view_temp"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <LinearLayout
@@ -341,7 +341,6 @@
             android:padding="4dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:text="@string/example"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -350,6 +349,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_view_treatment"
             tools:ignore="TextContrastCheck"
+            tools:text="@string/example"
             tools:visibility="visible" />
 
         <Button
