@@ -129,6 +129,7 @@ class UpdateFragment : Fragment() {
 
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         Toast.makeText(
             requireContext(),
